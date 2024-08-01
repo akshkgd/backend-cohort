@@ -1,0 +1,3 @@
+1722521750671 GET requested /?userId=1234&email=verified
+1722521932451 GET requested /register
+1722521937218 GET requested /register/
