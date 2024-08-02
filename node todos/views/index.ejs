@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to todos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+        <div class="mt-32 w-[400px] mx-auto">
+            <h1 class=" text-2xl  font-bold ">Manage your todos!</h1>
+            <p class="text-sm text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius cumque accusantium deleniti distinctio. Reiciendis?</p>
+
+            <form action="/add-task" method="post">
+                <input name="task" class="border my-2 w-full p-3 text-black rounded-lg focus:outline-none" type="text" placeholder="learn express js...">
+                <button class="px-4 py-3 bg-black text-white rounded-lg" >Add Task</button>
+            </form>
+
+            <div class="">
+                <% for(let i=0; i<todos.length; i++) {%>
+                <div class="bg-gray-50 my-3 rounded-lg p-3">
+                    <%= todos[i].title %>
+                </div>
+                <%}%>
+            </div>
+        </div>
+</body>
+</html>
