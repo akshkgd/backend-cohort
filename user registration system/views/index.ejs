@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User management system</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="border-b py-3">
+        <div class="flex justify-between max-w-5xl mx-auto items-center">
+            <a href="/" class="text-lg">User management</a>
+            <a href="/add" class="hover:text-blue-600 text-sm">Add User</a>
+        </div>
+    </div>
+
+
+    <div class="mt-32 max-w-sm mx-auto ">
+    <% if(usersCount == 0){ %>
+        <h1 class="text-lg font-bold">No users available!</h1>
+        <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque quo nemo?</p>
+        <a href="/add" class="inline-block mt-2 bg-black text-white px-5 py-3">Add User</a>
+    <%} else{%>
+        <h1 class="text-lg font-bold">Manage users</h1>
+        <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque quo nemo?</p>
+        
+        <% for(let i=0; i < users.length; i++){%>
+            <div class="flex justify-between items-center mt-3">
+                    <div class="flex gap-2 items-center ">
+                        <img src="<%= users[i].img %>" class="h-10 w-10 rounded-full object-cover" alt="">
+                        <div ><%= users[i].name %></div>
+                        <div><%= users[i].email %></div>
+                    </div>
+                    <form action="/delete" method="post">
+                        <input type="hidden" name="userId" value="<%= i %>">
+                        <button type="submit">Delete</button>
+                    </form>
+            </div>
+        <%}%>
+        <%}%>
+    </div>
+
+</body>
+</html>
