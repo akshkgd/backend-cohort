@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User management system</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <div class="border-b py-3">
@@ -15,7 +16,7 @@
     </div>
 
 
-    <div class="mt-32 max-w-sm mx-auto ">
+    <div class="mt-32 max-w-md mx-auto ">
     <% if(usersCount == 0){ %>
         <h1 class="text-lg font-bold">No users available!</h1>
         <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque quo nemo?</p>
@@ -31,10 +32,18 @@
                         <div ><%= users[i].name %></div>
                         <div><%= users[i].email %></div>
                     </div>
-                    <form action="/delete" method="post">
-                        <input type="hidden" name="userId" value="<%= i %>">
-                        <button type="submit">Delete</button>
-                    </form>
+                    <div class="flex gap-4 items-center">
+                        <form action="/edit" method="post" class="inline">
+                            <input type="hidden" name="userId" value="<%= i %>">
+                            <button type="submit"><i class="bi bi-pencil"></i></button>
+                        </form>
+                        <form action="/delete" method="post" class="inline">
+                            <input type="hidden" name="userId" value="<%= i %>">
+                            <button type="submit"><i class="bi bi-trash3"></i></button>
+                        </form>
+                        
+                    </div>
+                    
             </div>
         <%}%>
         <%}%>

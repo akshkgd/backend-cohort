@@ -29,6 +29,16 @@ app.post('/delete', (req,res)=>{
     users.splice(userId, 1);
     res.redirect('/')
 })
+app.post('/edit',(req,res)=>{
+    let {userId} = req.body;
+    let user = users[userId];
+    res.render('edit', {user, userId})
+})
+app.post('/update-user', (req,res)=>{
+    let {userId, name, email, img} = req.body;
+    users.splice(userId, 1, {name: name, email: email, img: img});
+    res.redirect('/')
+})
 
 app.get('*', (req,res)=>{
     res.render('error')

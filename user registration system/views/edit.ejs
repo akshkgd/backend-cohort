@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User management system</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="border-b py-3">
+        <div class="flex justify-between max-w-5xl mx-auto items-center">
+            <a href="/" class="text-lg">User management</a>
+            <a href="/add" class="hover:text-blue-600 text-sm">Add User</a>
+        </div>
+    </div>
+
+
+
+    <div class="mt-32 max-w-sm mx-auto ">
+            <h1 class="text-xl font-bold">Update details of <%=user.name%></h1>
+            <p class="text-sm text-neutral-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, maiores? Consequatur, alias?</p>
+        
+
+            <form action="/update-user" method="post" >
+                <input type="hidden" name="userId" value="<%=userId%>">
+                <input value="<%=user.name%>"  name="name" placeholder="Full name" type="text" required class="mt-5 mb-2 border border-neutral-300 w-full p-3 focus:outline-none focus:border-blue-600">
+                <input value="<%=user.email%>"  name="email" placeholder="Email address" type="email" required class="mb-2 border border-neutral-300 w-full p-3 focus:outline-none focus:border-blue-600">   
+                <input value="<%=user.img%>"  name="img" placeholder="Profile url" type="text" required class="mb-2 border border-neutral-300 w-full p-3 focus:outline-none focus:border-blue-600">   
+                <button type="submit" class="bg-black text-white px-5 py-3">Update User</button>
+            </form>
+    
+    
+        </div>
+</body>
+</html>
