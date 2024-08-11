@@ -1,0 +1,14 @@
+<%-include('layout', {files: files, body: `
+    <form action="/update" method='post'>
+        <input type="hidden" name="fileName" value="${fileName}">
+        <textarea rows="20" class="w-full focus:outline-none" name="fileData" id="">
+            ${data}
+        </textarea>
+        <button class="fixed top-3 right-5">Save</button>
+    </form>
+
+
+    `}) %>
+
+
+    

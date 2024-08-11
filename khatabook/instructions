@@ -1,0 +1,9 @@
+1. user can create new file on the basis of date
+2. user can add or modify the date in that file
+3. user shuld be able to delete a file 
+4. user should also be able to see all the files
+
+
+process => 
+1. setup the server
+2. layout that will look similar in all pages
