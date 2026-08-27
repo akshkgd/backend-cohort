@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codekaro Todos</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+<div class=" mt-4 max-w-5xl mx-auto flex justify-between items-center">
+    <a  href="/" class="font-bold text-xl">Todoist</a>
+    <a href="/completed" class="text-sm border border-neutral-200 text-neutral-700 p-2 rounded">Completed tasks</a>
+</div>
+    <div class="max-w-xl mx-auto mt-12 ">
+        <% if(todos.length > 0) {%>
+        <%todos.forEach(todo =>{%>
+            <div class="border p-3 border-neutral-200 mt-3 flex gap-4 items-center">
+                <form action="/todo/<%=todo.id%>/complete" method="post" class="block">
+                    <button type="submit" class="h-4 w-4 border border-neutral-400 rounded-full cursor-pointer"></button>
+                </form>
+                <h1><%= todo.title %></h1>
+                
+            </div>
+        <%})%>
+        <%} else {%>
+            <div class="text-center">
+                <img class="h-48 inline-block" src="https://todoist.b-cdn.net/assets/images/e2bf53fe3d09d270.png" alt="">
+                <h1 class="text-2xl text-center  font-semibold text-neutral-800">No new Task available!</h1>
+                <p class="text-neutral-600 text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, neque itaque iste quis suscipit fugit id?</p>
+            </div>
+            <%}%>
+    </div>
+
+    
+    
+        
+    
+    <div class="w-full mx-auto fixed  bottom-5">
+        <form action="/todo" method="post" class="max-w-xl mx-auto flex relative">
+            <input type="text" name="title" class="w-full border border-neutral-200 py-3  px-6 focus:outline-0 focus:ring-2 rounded-full focus:border-orange-600 focus:ring-orange-100" placeholder="Enter a task...">
+            <button type="submit" class="absolute h-10 w-10 right-0 flex justify-center items-center bg-orange-600 text-white rounded-full mt-[5px] text-2xl mr-2  p-0 cursor-pointer pb-1">+</button>
+        </form>
+    </div>
+</body>
+</html>

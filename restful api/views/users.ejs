@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="">
+        <%for(let i=0; i<users.length; i++){%>
+            <div class="flex p-3 border rounded-xl gap-5 mb-5 w-[400px] mx-auto ">
+                <%= users[i].first_name %>
+                <%= users[i].email %> 
+            </div>
+
+        <%}%>
+    </div>
+</body>
+</html>

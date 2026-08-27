@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login now</title>
+</head>
+<body>
+    <h1>Welcome back</h1>
+    <%if(error){%>
+        <p style="color: red;"> <%= error %> </p>
+
+        <%}%>
+    <form action="/user/login" method="post">
+        <input type="email" placeholder="Email address" name="email">
+        <input type="text" placeholder="Password" name="password">
+        <button type="submit">Login Now</button>
+
+    </form>
+</body>
+</html>
