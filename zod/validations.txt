@@ -1,0 +1,19 @@
+z.string() ✅
+min / max ✅
+email ✅
+z.number() ✅
+int / positive / min / max ✅
+boolean ✅
+URL ✅
+date  ✅
+coerce => try to convert the value in the acceptable format ✅
+
+arrays ✅
+z.object() ✅
+optional ✅
+default ✅
+enum ✅
+
+safeParse ✅
+error handling ✅
+strict 
